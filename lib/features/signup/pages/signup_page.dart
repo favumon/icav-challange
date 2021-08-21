@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:icav_challenge/core/widgets/button_normal.dart';
+import 'package:reactive_forms/reactive_forms.dart';
+
 import '../../../core/utils/validation_helper.dart';
-import '../../../core/widgets/button_normal.dart';
 import '../../../core/widgets/common_text_field.dart';
 import '../../../di/injection_container.dart';
-import 'package:reactive_forms/reactive_forms.dart';
 import '../controllers/signup_page_controller.dart';
 
 class SignupPage extends StatelessWidget {
@@ -14,12 +15,13 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        //  alignment: Alignment.bottomCenter,
         children: [
-          ReactiveFormBuilder(
-              form: () => _controller.signupForm,
-              builder: (context, _, __) {
-                return SingleChildScrollView(
-                  child: Padding(
+          SingleChildScrollView(
+            child: ReactiveFormBuilder(
+                form: () => _controller.signupForm,
+                builder: (context, _, __) {
+                  return Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -86,11 +88,14 @@ class SignupPage extends StatelessWidget {
                                   _controller.passwordValidation,
                                   matchingFieldName: 'password'),
                         ),
+                        SizedBox(
+                          height: 50,
+                        ),
                       ],
                     ),
-                  ),
-                );
-              }),
+                  );
+                }),
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: ButtonNormal(

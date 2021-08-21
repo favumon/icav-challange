@@ -39,60 +39,64 @@ class UserProfilePage extends StatelessWidget {
               builder: (context, form, _) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 50,
-                      ),
-                      ProfileAvatar(),
-                      SizedBox(
-                        height: 50,
-                      ),
-                      CommonTextField(
-                        controlName: 'name',
-                        prefixText: 'Name',
-                        validationMessages: (_) => generateValidationsMessages(
-                            'Name', _controller.nameValidation),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      CommonTextField(
-                        controlName: 'email',
-                        prefixText: 'Email',
-                        validationMessages: (_) => generateValidationsMessages(
-                            'email', _controller.emailValidation),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      CommonTextField(
-                        controlName: 'phoneNumber',
-                        prefixText: 'Phone Number',
-                        textInputFormatter: _controller.phoneNumberFormatter,
-                        validationMessages: (_) => generateValidationsMessages(
-                            'Phone Number'.tr,
-                            _controller.phoneNumberValidation,
-                            customPatternMessage:
-                                'Phone number shoud be +91 - ##########'),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      CommonTextField(
-                        controlName: 'username',
-                        prefixText: 'Username',
-                        isReadOnly: true,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      ThemeSwitchButton((value) {
-                        value
-                            ? Get.changeTheme(theme2)
-                            : Get.changeTheme(theme1);
-                      })
-                    ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 50,
+                        ),
+                        ProfileAvatar(),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        CommonTextField(
+                          controlName: 'name',
+                          prefixText: 'Name',
+                          validationMessages: (_) =>
+                              generateValidationsMessages(
+                                  'Name', _controller.nameValidation),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        CommonTextField(
+                          controlName: 'email',
+                          prefixText: 'Email',
+                          validationMessages: (_) =>
+                              generateValidationsMessages(
+                                  'email', _controller.emailValidation),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        CommonTextField(
+                          controlName: 'phoneNumber',
+                          prefixText: 'Phone Number',
+                          textInputFormatter: _controller.phoneNumberFormatter,
+                          validationMessages: (_) =>
+                              generateValidationsMessages('Phone Number'.tr,
+                                  _controller.phoneNumberValidation,
+                                  customPatternMessage:
+                                      'Phone number shoud be +91 - ##########'),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        CommonTextField(
+                          controlName: 'username',
+                          prefixText: 'Username',
+                          isReadOnly: true,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        ThemeSwitchButton((value) {
+                          value
+                              ? Get.changeTheme(theme2)
+                              : Get.changeTheme(theme1);
+                        })
+                      ],
+                    ),
                   ),
                 );
               }),
