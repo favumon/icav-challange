@@ -1,3 +1,5 @@
+User signup and and Login using hive as a backend.Uses GetX State management with Clean Architecture.
+
 <p float="left">
   <img src="https://user-images.githubusercontent.com/2209460/130321521-d5843701-bbcb-4f2f-a924-90b383dec524.png" width="300" />
   <img src="https://user-images.githubusercontent.com/2209460/130321524-dbc459f7-9a06-48e4-82a9-05f0a41999f5.png" width="300" /> 
